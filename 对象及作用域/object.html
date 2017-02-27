@@ -15,8 +15,8 @@
 		var a = {n:1};
 		var b = a;
 		a.x = a = {n:2};
-		console.log(a.x);  //undefined，因为.的优先级比=高
-		console.log(b.x);  //object {n:2}，
+		console.log(a.x);  //undefined，因为.的优先级比=高,先创建a.x对象，然后再从右向左赋值
+		console.log(b.x);  //object {n:2}，浅拷贝
 
 
 	</script>
