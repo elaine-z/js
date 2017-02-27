@@ -15,7 +15,7 @@
 		var a = {n:1};
 		var b = a;
 		a.x = a = {n:2};
-		console.log(a.x);  //undefined，因为.的优先级比=高,先创建a.x对象，然后再从右向左赋值
+		console.log(a.x);  //undefined，因为.的优先级比=高,先创建a.x对象，值为undefined，然后再从右向左赋值，即a为{n:2,x:undefined}，将{n:2}赋值给a.x后，原来的对象就变成了{n:1,x:{n:2}}
 		console.log(b.x);  //object {n:2}，浅拷贝
 
 
