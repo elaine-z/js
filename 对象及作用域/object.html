@@ -3,9 +3,75 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			margin: 55px;
+			/*padding: 25px;*/
+			/*position: relative;*/
+		}
+		.parent{
+			background-color: red;
+			position: relative;
+			width: 600px;
+			height: 600px;
+			margin: 10px;
+			padding: 12px;
+		}
+		.child{
+			/*position: absolute;
+			left: 150px;
+			top: 150px;*/
+			border: 5px solid green;
+			background-color: yellow;
+			width: 300px;
+			height: 300px;
+			overflow: scroll;
+			margin: 15px;
+			padding: 8px;
+		}
+		.content{
+			width: 500px;
+			height: 500px;
+			margin: 3px;
+			padding: 4px;
+			border: solid 6px gray;
+		}
+	</style>
 </head>
-<body>
+<body> 
+<div class="main">
+	<div class="parent" id="parent">
+		<div class="child" id="child">
+			<div class="content" id="content"></div>
+		</div>
+	</div>
+</div>
 	<script type="text/javascript">
+	window.onload = function(){
+		var obj = document.getElementById('child');
+		var content = document.getElementById('content');
+		var offsetWidth = obj.offsetWidth;
+		var offsetHeight = obj.offsetHeight;
+		var offsetTop = obj.offsetTop;
+		var offsetLeft = obj.offsetLeft;
+		var clientWidth = obj.clientWidth;
+		var clientHeight = obj.clientHeight;
+		var clientTop = obj.clientTop;
+		var clientLeft = obj.clientLeft;
+		var scrollWidth = obj.scrollWidth;
+		var scrollHeight = obj.scrollHeight;
+		var scrollTop = obj.scrollTop;
+		var scrollLeft = obj.scrollLeft;
+		var left = obj.style.left;
+		var top = obj.style.top;
+		content.innerHTML = 'offsetWidth: ' + offsetWidth + '<br/>'+'offsetHeight: ' + offsetHeight + '<br/>'+'offsetTop: ' + offsetTop + '<br/>' + 'offsetLeft: ' + offsetLeft + '<br/>' + 'clientWidth: ' + clientWidth + '<br/>' + 'clientHeight: ' + clientHeight + '<br/>' + 'clientTop: ' + clientTop + '<br/>' + 'clientLeft: ' + clientLeft + '<br/>' + 'scrollWidth: ' + scrollWidth + '<br/>' + 'scrollHeight: ' + scrollHeight + '<br/>' + 'scrollTop: ' + scrollTop + '<br/>' + 'scrollLeft: ' + scrollLeft + '<br/>' + 'left: ' + left + '<br/>' + 'top: ' + top + '<br/>'
+	}
+	</script>
+<!-- 	<script type="text/javascript">
 
 		var a = 1;
 		a.a = 2;
@@ -19,6 +85,6 @@
 		console.log(b.x);  //object {n:2}，浅拷贝
 
 
-	</script>
+	</script> -->
 </body>
 </html>
